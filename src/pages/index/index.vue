@@ -1,24 +1,52 @@
 <template>
   <view class="index">
-    <Counter />
-    <nut-button type="primary">主要按钮</nut-button>
-    <nut-button type="info">信息按钮</nut-button>
-    <nut-button type="default">默认按钮</nut-button>
-    <nut-button type="danger">危险按钮</nut-button>
-    <nut-button type="warning">警告按钮</nut-button>
-    <nut-button type="success">成功按钮</nut-button>
+    <!-- <Counter /> -->
+    <div class="header"></div>
+    <div class="container"></div>
+    <nut-tabbar bottom safe-area-inset-bottom placeholder>
+      <nut-tabbar-item v-for="(item, index) in List" :tab-title="item.title" :icon="item.icon"> </nut-tabbar-item>
+    </nut-tabbar>
+
   </view>
 </template>
 
 <script>
+import { h } from 'vue';
 import './index.less'
-import Counter from '../../components/Counter.vue'
-
+// import Counter from '../../components/Counter.vue'
+import Tabbar from '../../components/Tabbar.vue'
+import { Home, Category, Find, Cart, My } from '@nutui/icons-vue';
 
 export default {
   name: 'Index',
   components: {
-    Counter
-  }
+    // Counter
+    Tabbar
+  },
+  setup() {
+    const List = [
+      {
+        title: '首页',
+        icon: h(Home),
+      },
+      {
+        title: '题库',
+        icon: h( Find),
+      },
+      {
+        title: '我的',
+        icon: h(My),
+
+      },
+      {
+        title: '关于',
+        icon: h(Category),
+      },
+    ]
+    return {
+      List,
+    };
+  },
 }
 </script>
+ 
