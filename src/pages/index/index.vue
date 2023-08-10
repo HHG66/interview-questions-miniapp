@@ -1,6 +1,6 @@
 <template>
   <view class="index">
-    <!-- <Counter /> -->
+    <!-- <Counter /> -->123s
     <div class="header"></div>
     <div class="container"></div>
     <nut-tabbar bottom safe-area-inset-bottom placeholder>
